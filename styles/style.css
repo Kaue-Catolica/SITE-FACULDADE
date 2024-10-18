@@ -764,22 +764,22 @@ header{
 /* mostrar resposta */
 
 .show-code-button {
-    background-color: #f1683a; /* Cor do botão */
-    color: white; /* Cor do texto */
-    padding: 10px 15px; /* Espaçamento interno */
-    border: none; /* Sem borda */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Muda o cursor ao passar o mouse */
-    margin-bottom: 10px; /* Espaçamento abaixo do botão */
+    background-color: #f1683a; 
+    color: white;
+    padding: 10px 15px;
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer; 
+    margin-bottom: 10px; 
 }
 
 /* Estilo do código */
 .code-container {
-    display: none; /* Oculta o código por padrão */
-    background-color: #f0f0f0; /* Cor de fundo do código */
-    border: 1px solid #ccc; /* Borda do código */
-    border-radius: 5px; /* Bordas arredondadas */
-    padding: 10px; /* Espaçamento interno */
-    white-space: pre; /* Mantém os espaços em branco */
-    overflow: auto; /* Adiciona rolagem se necessário */
+    display: none; 
+    background-color: #f0f0f0; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px; 
+    white-space: pre; 
+    overflow: auto;
 }
