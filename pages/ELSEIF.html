@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estruturas Condicionais e de Repetição</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/animations.css">
+    <link rel="stylesheet" href="../styles/icons.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Menu lateral -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="../index.html">Pagina Inicial</a></li>
+                <li><a href="#introducao" class="menu-item">Introdução</a></li>
+                <li><a href="#if" class="menu-item">Estrutura If</a></li>
+                <li><a href="#ifelse" class="menu-item">Estrutura If-Else</a></li>
+                <li><a href="#switch" class="menu-item">Estrutura Switch</a></li>
+                <li><a href="#exercicios" class="menu-item">Exercícios</a></li>
+            </ul>
+        </nav>
+
+        <!-- Conteúdo principal -->
+        <div class="content">
+            <section class="border-box" id="introducao">
+                <h2>Introdução</h2>
+                <p>As <strong>estruturas condicionais</strong> permitem que seu programa tome decisões com base em condições. As principais são if, if-else e switch. Além disso, temos estruturas de repetição, como while, do e for, que permitem executar blocos de código várias vezes, apresentada na próxima seção.</p>
+            </section>
+
+            <section  class="border-box" id="if">
+                <h2>Estrutura If</h2>
+                <p>A estrutura <strong>if</strong> verifica se uma condição é verdadeira e, caso seja, executa um bloco de código. Caso contrário, esse bloco é ignorado.
+                </p>
+                <img src="../img/if.png" alt="">
+                <p>O comando consiste na palavra-chave if seguida de uma expressão de teste entre parênteses. Se a expressão de teste (condição) for verdadeira, a instrução será executada; do contrário, nada será feito. Exemplo:</p>
+                <pre>
+<code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int idade = 18;
+    if (idade >= 18) {
+        printf("Voce e maior de idade.");
+    }
+    getchar();
+    return 0;
+}
+
+</code>
+                </pre>
+                <p>Operadores relacionais funcionam como os símbolos matemáticos e são muitos úteis para as expressões de teste. No exemplo passado, o operador maior igual (>=) foi utilizado. A seguir há um quadro contendo a esquerda os caracteres para utilizar e a direita o que representa: </p>
+                <img src="../img/relacional.png" alt="">
+                <p>Há também os operadores lógicos de valores booleanos (verdadeira/falso) que são importantes na definição de condições:
+                    <br>E - &&;
+                    <br>OU - ||;
+                    <br>NÃO - !;
+                    
+                </p>
+
+            </section>
+
+            <section  class="border-box" id="ifelse">
+                <h2>Estrutura If-Else</h2>
+                <p>O <strong>if-else</strong> adiciona uma alternativa. Se a condição no <strong>if</strong> não for verdadeira, o bloco de código no <strong>else</strong> será executado.</p>
+                <pre>
+<code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int idade = 16;
+    if (idade >= 18) {
+        printf("Você é maior de idade.");
+    } else {
+        printf("Você é menor de idade.");
+    }
+    getchar();
+    return 0;
+}
+</code>
+                </pre>
+                <p>Além do if e do else, há também o else if. O else if é utilizado para adicionar mais um teste de condição além do if
+                </p>
+                <pre>
+                    <code>
+                    #include &lt;stdio.h&gt;
+                    
+                    int main(void){
+                        int numero=10;
+                        if(numero&gt;7){
+                        printf("O numero e menor que 5.\n");
+                        } else if(numero&lt;12){
+                        printf("O numero e maior ou igual a 7 e menor que 12.\n");
+                        } else{
+                        printf("O numero e maior ou igual a 12.\n”);
+                        return 0;
+                        }
+                        
+                    </code>
+                                    </pre>
+                                    <p>
+                                        Vídeo sobre o comando if
+                                        </p>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/LQNzQCddjHQ?si=MiNp-Y4YwNZeDkpb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </section>
+
+            <section  class="border-box" id="switch">
+                <h2>Estrutura Switch</h2>
+                <p>A estrutura <strong>switch</strong> permite testar uma variável contra várias condições, executando blocos de código diferentes com base no valor da variável.</p>
+                <pre>
+<code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int dia = 3;
+
+    switch(dia) {
+        case 1:
+            printf("Domingo");
+            break;
+        case 2:
+            printf("Segunda-feira");
+            break;
+        case 3:
+            printf("Terça-feira");
+            break;
+        default:
+            printf("Dia inválido");
+    }
+    getchar();
+    return 0;
+}
+</code>
+                </pre>
+                <p>Quando os casos forem caracteres de letras é necessário colocá-los entre aspas simples (‘’).</p>
+                <p>Exemplo prático: Faça um programa que verifique se uma letra digitada é vogal ou consoante. Se digitar outro caractere (número ou símbolo) informe “A entrada é inválida”
+                </p>
+                <pre>
+                    <code>
+                    #include &lt;stdio.h&gt;
+                    
+                    int main(void) {
+                        char letra;
+                        printf("Digite uma letra: ");
+                        scanf("%c", &letra);
+                        fflush(stdin);
+                        switch (letra) {
+                            case 'A': case 'E': case 'I': case 'O': case 'U': //entrada de letra maiuscula
+                            case 'a': case 'e': case 'i': case 'o': case 'u': //entrada de letra minuscula
+                                printf("\n%c e uma letra vogal",letra); //saida para todos os casos citados
+                                break;
+                                
+                            default:
+                                switch (letra) {
+                                    case 'B'...'Z': //reticencias para considerar todas as letras no meio
+                                    case 'b'...'z':
+                                        printf("\n%c e uma letra consoante",letra);
+                                        break;
+                                    default:
+                                        printf("\nErro: %c nao e uma letra",letra);
+                                        break;
+                                }
+                                break;
+                        }
+                        getchar();
+                        return 0;
+                    }
+                    
+                    </code>
+                                    </pre>
+                                    <p>Vídeo sobre o comando switch:</p>
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/xgwrJNZGo24?si=isHqtoRQNzBC9m-H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </section>
+
+           
+
+            <section  class="border-box" id="exercicios">
+                <h2>Exercícios</h2>
+                <p>Pratique o uso de estruturas condicionais com os exemplos a seguir:</p>
+
+                <h3>1. Verifique se um número é par ou ímpar:</h3>
+                <button class="show-code-button" onclick="toggleCode1()">Mostrar Resposta</button>
+                <pre>
+                    <div class="code-container" id="code1">
+<code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int numero;
+    printf("Digite um número: ");
+    scanf("%d", &numero);
+
+
+    if (numero % 2 == 0) {
+        printf("O número é par.");
+    } else {
+        printf("O número é ímpar.");
+    }
+    return 0;
+}
+
+</code>
+</div>
+                </pre>
+
+                <h3>2. Crie um programa que verifica o dia da semana com switch:</h3>
+                <button class="show-code-button" onclick="toggleCode2()">Mostrar Resposta</button>
+                <pre>
+                    
+                    <div class="code-container" id="code2">
+                        <code>
+                            #include &lt;stdio.h&gt;
+                
+                            int main() {
+                                int dia;
+                                printf("Digite um número (1-7) para o dia da semana: ");
+                                scanf("%d", &dia);
+                            
+                            
+                                switch(dia) {
+                                    case 1:
+                                        printf("Domingo");
+                                        break;
+                                    case 2:
+                                        printf("Segunda-feira");
+                                        break;
+                                    case 3:
+                                        printf("Terça-feira");
+                                        break;
+                                    case 4:
+                                        printf("Quarta-feira");
+                                        break;
+                                    case 5:
+                                        printf("Quinta-feira");
+                                        break;
+                                    case 6:
+                                        printf("Sexta-feira");
+                                        break;
+                                    case 7:
+                                        printf("Sábado");
+                                        break;
+                                    default:
+                                        printf("Dia inválido");
+                                }
+                                return 0;
+                            }
+                            
+                        </code>
+                    </div>
+                </pre>
+
+                <h3>3. Faça um programa que peça dois números e imprima o maior deles:</h3>
+                <button class="show-code-button" onclick="toggleCode3()">Mostrar Resposta</button>
+                <pre>
+                    
+                    <div class="code-container" id="code3">
+<code>
+#include &lt;stdio.h&gt;
+
+int main (void){
+	float n1,n2;
+	printf("Digite um numero: ");
+	scanf("%f",&n1);
+	
+	printf("\nDigite outro numero: ");
+	scanf("%f",&n2);
+	fflush(stdin);
+	
+	if (n1>n2){
+		printf("\nO numero %f e maior que o numero %f.",n1,n2);
+	}
+	else{
+		printf("\nO numero %f e maior que o numero %f.",n2,n1);
+	}
+	
+	getchar();
+	return 0;
+}
+
+</code>
+</div>
+                </pre>
+
+                <h3>4. Faça um programa que peça três notas de um aluno e calcule a média. Analisar a média e imprimir uma das mensagens a seguir:</h3>
+                <p>
+                    <br> a) A mensagem "Aprovado", se a média for maior ou igual a 7, com a respectiva média alcançada; 
+                    <br> b) A mensagem "Reprovado", se a média for menor do que 7, com a respectiva média alcançada; 
+                    <br> c) A mensagem "Aprovado com Distinção", se a média for igual a 10.
+
+                </p>
+
+                <button class="show-code-button" onclick="toggleCode4()">Mostrar Resposta</button>
+                <pre>
+                    <div class="code-container" id="code4">
+<code>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+
+int main() {
+    int numero, tentativa;
+    srand(time(NULL));
+    numero = rand() % 10 + 1;
+
+    printf("Adivinhe o número (entre 1 e 10): ");
+    do {
+        scanf("%d", &tentativa);
+        if (tentativa > numero) {
+            printf("Muito alto! Tente novamente: ");
+        } else if (tentativa < numero) {
+            printf("Muito baixo! Tente novamente: ");
+        }
+    } while (tentativa != numero);
+
+    printf("Parabéns! Você adivinhou o número!");
+    return 0;
+}
+</code>
+</div>
+                </pre>
+            </section>
+        </div>
+    </div>
+    <a href="lacos.html" class="floating-button">Avançar</a>
+    <a href="Var.html" class="floating-button-prev">Voltar</a>
+    <script src="../scripts/script.js"></script>
+
+   
+    </script>
+</body>
+</html>

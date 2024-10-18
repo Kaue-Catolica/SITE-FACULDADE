@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Titulo -->
+    <title>Prototipo de Baixa Fidelidade</title>
+
+    <!-- Bibliotecas de Estilo -->
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/icons.css" />
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/responsive.css" />
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+    <header>
+      <div>
+        <img class="logo" src="img/fav.png" alt="Linguagem C" />
+      </div>
+      <div>
+        <nav class="navmenu" id="navmenu">
+          <a class="nav-link" href="#Inicio">Incio</a>
+          <a class="nav-link" href="#joguinhos">Jogos</a>
+        </nav>
+      </div>
+      <button class="hidemenu" id="hidemenu" aria-label="Menu">
+        <span class="hidemenu-line"></span>
+        <span class="hidemenu-line"></span>
+        <span class="hidemenu-line"></span>
+      </button>
+    </header>
+
+    <!-- Banner / Carousel-->
+    <section id="banner" class="carousel">
+      <!-- list item -->
+      <div class="list">
+        <div class="item">
+          <img src="img/banner/img1.jpg" />
+          <div class="content">
+            <div class="title">Linguagem</div>
+            <div class="topic">C(ANSI)</div>
+            <div class="des">
+              Linguagem de propósito geral Desenvolvida entre 1969 e 1973 ANSI C
+              publicado em 1989 Tornou-se padrão ISO em 1990 Usada para
+              desenvolver sistemas operacionais Conjunto de palavras (keywords)
+              e regras a serem usadas na descrição de um programa
+            </div>
+            <div class="botao">
+              <button>Veja Mais</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/banner/img2.jpg" />
+          <div class="content">
+            <div class="title">Fundamentos da</div>
+            <div class="topic">Programação</div>
+            <div class="des">
+              Processo de escrever Intruções (pense como uma receita de bolo)
+              para que o computador entenda como prosseguir em diversas tarefas
+              e processos. Essas instruções são escritas em linguagens de
+              programação, como Python, Java, C++, entre outras.
+            </div>
+            <div class="botao">
+              <button>Veja Mais</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/banner/img3.jpg" />
+          <div class="content">
+            <div class="topic">Softwares</div>
+            <div class="title">e Programas</div>
+            <div class="des">
+              A linguagem C, criada por Dennis Ritchie, é uma linguagem de programação de alto nível que se destaca por sua eficiência e portabilidade. É amplamente utilizada para desenvolvimento de software, especialmente em sistemas operacionais e programas de baixo nível.
+            </div>
+            <div class="botao">
+              <button>Veja Mais</button>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/banner/img4.jpg" />
+          <div class="content">
+            <div class="topic">Games</div>
+            <div class="title">e Apps</div>
+            <div class="des">
+              A Linguagem C foi Fundamental para a criação e desenvolvimneto de
+              Jogos e aplicativos que usamos Hoje, venha conosco e aprenda mais
+              como as linguagens que iremos abordar são usadas para essa
+              finalidade.
+            </div>
+            <div class="botao">
+              <button>Veja Mais</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- list thumnail -->
+      <div class="thumbnail">
+        <div class="item">
+          <img src="img/banner/img1.jpg" />
+          <div class="content">
+            <div class="title">Linguagem C</div>
+            <div class="description">Liguagem de Programação</div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/banner/img2.jpg" />
+          <div class="content">
+            <div class="title">Fundamentos</div>
+            <div class="description">Aprendendo o Basico</div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/banner/img3.jpg" />
+          <div class="content">
+            <div class="title">Softwares</div>
+            <div class="description">Desenvolvimento de Programas</div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/banner/img4.jpg" />
+          <div class="content">
+            <div class="title">Games e Apps</div>
+            <div class="description">
+              Desenvolvimento de Jogos, Aplicativos, etc
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- next prev -->
+
+      <div class="arrows">
+        <button id="prev"><</button>
+        <button id="next">></button>
+      </div>
+      <!-- Tempo Rodando-->
+      <div class="time"></div>
+    </section>
+
+    <section id="PAC">
+      <h1>Introdução ao PAC</h1>
+      <p>Agradecemos a inscrição no curso, e esperamos que tire o máximo proveito das aulas e conteúdos disponibilizados!</p>
+      <p>O curso é elaborado e apresentado pelos estudantes do 1° semestre do curso de graduação em Engenharia de Software, com supervisão e auxílio da professora Tassiana Kautzmann. Sendo objeto de avaliação obrigatória para cumprir com a unidade curricular Projeto de Aprendizagem Colaborativa Extensionista I da graduação.</p>
+      <ul style="text-align: center; list-style: none;">Equipe de desenvolvimento do site e conteúdos do curso de Lógica de Programação e Linguagem de Programação em C:
+        <li>Agenor Alvise</li>
+        <li>Amanda Zimmermann</li>
+        <li>Diego de Araújo Silva </li>
+        <li>Henrique Cezar da Silveira</li>
+        <li>Kauan Raitz dos Anjos</li>
+        <li>Kauê Keiser Lindner</li>
+        <li>Lucas Ramos da Rocha</li>
+          
+      </ul>
+      
+    </section>
+
+    <!-- Roadmap de Aprendizado -->
+    <section id="roadmap">
+      <h1>Roadmap de Aprendizado</h1>
+      <a href="/pages/LogicaProgramacao.html">
+        <div class="assuntos">
+          <div class="center sub-box" id="logica">
+            <div class="circle">
+            <h1>1.</h1>
+            </div>
+            <h3>Noções de Software e Lógica de <span>Programação</span></h3>
+            <p>Uma das principais habilidades de um bom desenvolvedor. Aprenda sobre lógica, algoritmos e fluxogramas. </p>
+          </div>
+        </div>
+      </a>
+      <i class="double-down seguir"></i>
+      <a href="/pages/Linguagem C.html">
+        <div class="assuntos">
+          <div class="center sub-box" id="LinC">
+            <div class="circle">
+            <h1>2.</h1>
+            </div>
+            <h3>Introdução à Linguagem  <span>C</span> e <span>Bibliotecas</span></h3>
+            <p>Introdução, história e curiosidades sobre a linguagem utilizada no curso e tutorial de instalação da IDE DevC++ </p>
+          </div>
+        </div>
+      </a>
+      <i class="double-down seguir"></i>
+      <a href="pages/ComandosEntradaSaida.html">
+        <div class="assuntos">
+          <div class="center sub-box" id="IO">
+            <div class="circle">
+            <h1>3.</h1>
+            </div>
+            <h3>Comandos de entrada e <span>saida</span></h3>
+            <p>Os comandos de entrada e saída em C são fundamentais para interagir com o usuário e manipular dados. Entenda o que são, como utilizá-los, exercícios e desafios </p>
+          </div>
+        </div>
+      </a>
+      <i class="double-down seguir"></i>
+      <a href="pages/Var.html">
+        <div class="assuntos">
+          <div class="center sub-box" id="var">
+            <div class="circle">
+            <h1>4.</h1>
+            </div>
+            <h3>Declaração de  <span>Variáveis</span></h3>
+            <p>As variáveis são estruturas importantes em qualquer linguagem de programação. Entenda o que são, como utilizá-las, exercícios e desafios.</p>
+          </div>
+        </div>
+      </a>
+      <i class="double-down seguir"></i>
+      <a href="pages/ELSEIF.html">
+        <div class="assuntos">
+          <div class="center sub-box" id="if-else">
+            <div class="circle">
+            <h1>5.</h1>
+            </div>
+            <h3>Estruturas <span>Condicionais</span></h3>
+            <p>If, If-Else e Switch: utilização, estrutura, exercícios e desafios </p>
+          </div>
+        </div>
+      </a>
+      <i class="double-down seguir"></i>
+      <a href="pages/lacos.html">
+        <div class="assuntos">
+          <div class="center sub-box" id="lacos">
+            <div class="circle">
+            <h1>6.</h1>
+            </div>
+            <h3>Laços de <span>Repetição </span></h3>
+            <p>While, Do-While e For: utilização, estrutura, exercícios e desafios</p>
+          </div>
+        </div>
+      </a>
+      
+    </section>
+    <section class="game-section" id="joguinhos">
+      <h1>Ambiente Educativo</h1>
+  <div class="game-grid">
+    <div class="game1 game-flex container-column">
+      <button><a href="https://www.escolagames.com.br/jogos/pula-pula-coelhinho"><strong>Jogue Agora</strong></a></button>
+    </div>
+    <div class="game2 game-flex container-column"> 
+      <button><a href="https://www.coquinhos.com/o-mundo-do-blinky-esportes/play/"><strong>Jogue Agora</strong></a></button>
+    </div>
+    <div class="game3 game-flex container-column">
+      <h2>Minecraft Voyage Aquatic </h2>
+      <button><a href="https://studio.code.org/s/aquatic/lessons/1/levels/1"><strong>Jogue Agora</strong></a></button>
+    </div>
+    <div class="game4 game-flex container-column"> 
+      <h2>Minecraft Adventurer</h2>
+      <button><a href="https://studio.code.org/s/mc/lessons/1/levels/1"><strong>Jogue Agora</strong></a></button>
+    </div>
+    <div class="game5 game-flex container">
+      <button><a href="https://rachacuca.com.br/logica/problemas/teste-de-einstein/"><strong>Jogue Agora</strong></a></button>
+    </div>
+    <a href="https://rachacuca.com.br/logica/problemas/">
+    <div class="game6 game-flex container">
+      
+    </div>
+  </a>
+  <a href="https://rachacuca.com.br/logica/sudoku/">
+    <div class="game7 game-flex container"> 
+    </div>
+  </a>
+  </div>  
+    </section>
+
+    <footer>
+      <!-- Scripts -->
+      <script src="scripts/script.js"></script>
+    </footer>
+  </body>
+</html>

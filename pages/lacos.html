@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lacos de repeticao</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/animations.css">
+    <link rel="stylesheet" href="../styles/icons.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Menu lateral -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="../index.html">Pagina Inicial</a></li>
+                <li><a href="#introducao" class="menu-item">Introdução</a></li>
+                <li><a href="#estruturas" class="menu-item">Estruturas</a></li>                
+                <li><a href="#valores" class="menu-item">Atribuição de Valores</a></li>
+                <li><a href="#videos" class="menu-item">Video-Aulas</a></li>
+                <li><a href="#exercicios" class="menu-item">Exercicios</a></li>
+            </ul>
+        </nav>
+
+        <!-- Conteúdo principal -->
+        <div class="content">
+            
+            <section  class="border-box" id="introducao">
+                <h2>Introdução a Estruturas de Repetição</h2>
+                <p>As estruturas de repetição while, do e for são usadas para executar um bloco de código várias vezes enquanto uma condição for verdadeira. Cada um dos três possui pequenas diferenças entre eles. While executa o teste de condição antes aplicar as instruções. Do aplica as instruções primeiro e no final executa o teste condicional. Já o for, muda como é escrita, ficando tudo no parênteses.<br> A Seguir uma imagem de Fluxograma que demonstra uso de uma estrutura de Repetição: </p>
+                <img src="../img/ld1.png" alt="">
+            </section>
+            
+            <section  class="border-box" id="estruturas">
+                <h2>Estruturas de Repetição</h2>
+                <p>As estruturas de repetição <strong>while</strong> e <strong>for</strong> são usadas para executar um bloco de código várias vezes enquanto uma condição for verdadeira.</p>
+
+                <h3>Exemplo de While:</h3>
+                <pre>
+<code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int i = 0;
+    while (i < 5) {
+        printf("%d\n", i);
+        i++;
+    }
+    return 0;
+}
+</code>
+                </pre>
+
+                <h3>Exemplo de For:</h3>
+                <pre>
+<code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    for (int i = 0; i < 5; i++) {
+        printf("%d\n", i);
+    }
+    return 0;
+}
+</code>
+                </pre>
+                <h3>Exemplo de Do:</h3>
+                <pre>
+                    <code>
+                    #include &lt;stdio.h&gt;
+                    
+                    int main() {
+                        int i = 0;
+                        do {
+                            printf("%d\n", i);  
+                            i++;
+                        } while (i < 5);  //A condicao e verificada apos a execucao do bloco
+                        return 0;
+                    }
+                    
+                    </code>
+                                    </pre>
+            </section>
+            <section class="border-box" id="valores">
+                <h2>Atribuição de valores em formas contraídas</h2>
+                <p>Em laços de repetição, as formas contraídas de atribuições são essenciais para gerar atualização da variável e fazer com que a repetição siga até chegar a um certo valor e finalize o loop. Nos exemplos passados foi utilizado a forma “i++” que é igual a i=i+1, ou seja, atribui 1 a variável cada vez que passa no loop.<br> A seguir estão representadas as suas formas contraídas:          </p>
+                <img src="../img/ld2.png" alt="">
+               
+            </section>
+
+            
+
+
+
+            <section class="border-box" id="videos">
+                <h2>Aprimoramento em Video-aulas</h2>
+
+
+                <p>Como são estruturas um pouco mais complexas, recomendamos que assistam aos vídeos a seguir do YouTube sobre laços de repetição que utilizam o comando while, do e for:</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/FhM-rXPALL8?si=JW35cvC3BCNoJ2KI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/GGHR93PKsXc?si=qROUCVZ0IorP_ffr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/F3Kn4iyrrEA?si=kBYXKqS6DQ6J-lEI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </section>
+
+            <section class="border-box" id="conclusao">
+                <h2>Exercícios</h2>
+
+                <p>Pratique o uso de laços condicionais com os exemplos a seguir:</p>
+
+                <div>
+                    <h1>1. Escreva um programa que exiba os números de 1 a 10. Use o comando while.</h1>
+                    <button class="show-code-button" onclick="toggleCodeld1()">Mostrar Resposta</button>
+                        <pre>
+                            <div class="code-container" id="codeld1">
+                            <code>
+                                #include &lt;stdio.h&gt;
+                                int main() {
+                                    int i = 1;
+                                    
+                                    while (i <= 10) {
+                                        printf("%d\n", i);  
+                                        i++; 
+                                    }
+                                    getchar();
+                                    return 0;
+                                }
+                            </code>
+                            </div>
+                        </pre>
+                </div>
+                <div>
+                    <h1>2. Escreva um programa que peça ao usuário para adivinhar um número entre 1 e 10. O programa deve continuar pedindo até que o usuário acerte. Use o comando do-while.</h1>
+                    <button class="show-code-button" onclick="toggleCodeld2()">Mostrar Resposta</button>
+                        <pre>
+                            <div class="code-container" id="codeld2">
+                            <code>
+                                #include &lt;stdio.h&gt;
+                                int main() {
+                                    int numeroSecreto = 6;  //Numero que o usuário deve adivinhar
+                                    int palpite;
+                                    
+                                    do {
+                                        printf("Adivinhe o numero entre 1 e 10: ");
+                                        scanf("%i", &palpite);
+                                       fflush(stdin);
+                                        if (palpite != numeroSecreto) {
+                                            printf("Errado, tente novamente!\n");
+                                        }
+                                    } while (palpite != numeroSecreto);
+                                    printf("Parabens, voce adivinhou o numero!\n");
+                                
+                                getchar();
+                                    return 0;
+                                }
+                                
+                            </code>
+                            </div>
+                        </pre>
+                </div>
+                <div>
+                    <h1>3. Escreva um programa que imprima a tabuada de um número informado pelo usuário, de 1 a 10. Use o comando for.</h1>
+                    <button class="show-code-button" onclick="toggleCodeld3()">Mostrar Resposta</button>
+                        <pre>
+                            <div class="code-container" id="codeld3">
+                            <code>
+                                #include &lt;stdio.h&gt;
+                                int main() {
+                                    int num, i;
+                                    
+                                    printf("Digite um numero para ver sua tabuada: ");
+                                    scanf("%i", &num);
+                                    fflush(stdin);
+                                    
+                                    for (i = 1; i <= 10; i++) {
+                                        printf("%d x %d = %d\n", num, i, num * i);
+                                    }
+                                    getchar();
+                                    return 0;
+                                }                                
+                            </code>
+                            </div>
+                        </pre>
+                </div>
+
+
+            </section>
+
+            <a href="../index.html" class="floating-button">Finalizar</a>
+             <a href="ELSEIF.html" class="floating-button-prev">Voltar</a>
+
+             <script src="../scripts/script.js"></script>
+</body>
+
+</html>

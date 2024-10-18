@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comandos de Entrada e Saída</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/animations.css">
+    <link rel="stylesheet" href="../styles/icons.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Menu lateral -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#introducao" class="menu-item">Introdução</a></li>
+                <li><a href="#bibliotecas" class="menu-item">Bibliotecas básicas em C</a></li>
+                <li><a href="#saida" class="menu-item">Saída de Dados</a></li>
+                <li><a href="#entrada" class="menu-item">Entrada de Dados</a></li>
+                <li><a href="#cuidados" class="menu-item">Cuidados ao Usar scanf</a></li>
+                <li><a href="#getchar" class="menu-item">Uso do Getchar</a></li>
+                <li><a href="#strings" class="menu-item">Entrada e Saída de Dados para strings</a></li>
+                <li><a href="#extras" class="menu-item">Conteudos Extras</a></li>
+                <li><a href="#exercicios" class="menu-item">Exercícios Resolvidos</a></li>
+            </ul>
+        </nav>
+
+        <!-- Conteúdo principal -->
+        <div class="content">
+            <section class="border-box" id="introducao">
+                <h2>Introdução aos Comandos de Entrada e Saída em C</h2>
+                <p>Os comandos de entrada e saída em <strong>C</strong> são fundamentais para interagir com o usuário e
+                    manipular dados. Eles permitem que você receba informações do teclado e exiba resultados na tela. Os
+                    dois principais comandos utilizados são: <strong>printf()</strong> para saída e
+                    <strong>scanf()</strong> para entrada.
+                </p>
+            </section>
+
+            <section class="border-box" id="bibliotecas">
+                <h2>Bibliotecas básicas em C</h2>
+                <p>Para as linhas de código funcionarem é preciso incluir as bibliotecas necessárias conforme os
+                    comandos utilizados. É a primeira coisa que deve aparecer no seu código, utiliza-se a diretiva:
+                    <strong>“#include &lt;nome_da_biblioteca.h&gt;”</strong>. Ela serve para adicionar outro arquivo ao
+                    programa, é como se no
+                    lugar da diretiva fosse digitado o conteúdo do arquivo que está interligado. <br>A seguir algumas
+                    das principais bibliotecas em C, e algumas de suas principais funções:
+                </p>
+                <h3>Entrada e saída (input e output): #include &lt;stdio.h&gt;</h3>
+                <p><strong>printf()</strong> commando de saída de valor <br>
+                    <strong>scanf()</strong> comando de entrada de valor <br>
+                    <strong>getchar()</strong> ler caractere retorna valor ASCII
+                </p>
+                <h3>Biblioteca padrão: #include &lt;stdlib.h&gt;</h3>
+                <p><strong>srand()</strong>gerar número aleátorio
+                </p>
+                <h3>Funções matemáticas: #include &lt;math.h&gt;</h3>
+                <p><strong>floor( )</strong>arredonda para baixo <br>
+                    <strong>ceil( )</strong>arredonda para cima <br>
+                    <strong>sqrt( )</strong>Calcula raiz quadrada <br>
+                    <strong>pow(variável, expoente)</strong>potenciação <br>
+                    <strong>sin( )</strong>seno <br>
+                    <strong>log10( )</strong>logaritmo base 10
+                </p>
+                <h3>Funções para strings: #include &lt;string.h&gt;</h3>
+                <p><strong>strlen()</strong> retorna valor de comprimento da string
+                </p>
+
+            </section>
+
+            <section class="border-box" id="saida">
+                <h2>Saída de Dados: printf()</h2>
+                <p>O comando <strong>printf()</strong> é usado para exibir dados no console. A função segue o seguinte
+                    formato:<br><strong>printf("texto ou formato", variável);</strong></p>
+                <pre>
+<code>
+#include &lt;stdio.h&gt;
+
+int main() {
+
+    int idade = 25;
+    printf("A sua idade é %d anos", idade");
+
+    return 0;
+}
+</code>
+                </pre>
+                <p>Neste exemplo, <strong>%d</strong> é um especificador de formato que indica que um número inteiro
+                    será exibido. Outros especificadores incluem <strong>%f</strong> (float), <strong>%c</strong>
+                    (caractere), e <strong>%s</strong> (string).</p>
+            </section>
+
+            <section class="border-box" id="entrada">
+                <h2>Entrada de Dados: scanf()
+                </h2>
+                <p>O comando <strong>scanf()</strong> permite que você capture dados digitados via teclado. Ele tem o
+                    seguinte formato:<br><strong>scanf("formato", &variável);</strong></p>
+                <pre>
+<code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    
+    int idade;
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+    fflush(stdin);
+
+    return 0;
+}
+</code>
+                </pre>
+                <p>Aqui, o especificador <strong>%d</strong> indica que estamos esperando um número inteiro, e o símbolo
+                    <strong>&</strong> é usado para passar o endereço da variável onde o dado será armazenado.
+                </p>
+            </section>
+
+            <section class="border-box" id="cuidados">
+                <h2>Cuidados ao Usar scanf()</h2>
+                <p>Sempre utilize o <strong>&</strong> antes das variáveis, exceto para strings.<br><br> O comando
+                    <strong>fflush(stdin)</strong> é usado para limpar o buffer de entrada. Ele se torna necessário em
+                    alguns casos após a leitura de dados com <strong>scanf()</strong>, especialmente quando se lida com
+                    diferentes tipos de entrada (por exemplo, inteiros seguidos de caracteres ou strings). Isso ocorre
+                    porque o <strong>scanf()</strong> pode deixar caracteres de "nova linha" <strong>(\n)</strong> ou
+                    outros dados no buffer, o que pode interferir em leituras subsequentes
+                </p>
+                <pre>
+<code>
+#include &lt;stdio.h&gt;
+
+int main() {
+
+    char letra1, letra2;
+    printf("Digite uma letra: ");
+    scanf("%c", &letra1);
+
+    printf("Digite outra letra: ");
+    scanf("%c", &letra2);
+
+    printf("Voce digitou: '%c' e '%c'", letra1, letra2);
+
+    return 0;
+}
+</code>
+                </pre>
+                <p>A falta do <strong>fflush(stdin)</strong> faz com que após informar a primeira letra no
+                    <strong>scanf()</strong>, quando o usuário dá um "enter", este "enter" <strong>(letra digitada
+                        '\n')</strong> é guardado no buffer de entrada do teclado <strong>(stdin)</strong> e quando
+                    queremos
+                    guardar a segunda letra, automaticamente será atribuído <strong>'\n'</strong> à variável
+                    <strong>letra2</strong>, pois o valor já estava no buffer de entrada.
+                </p>
+                <h3>Exemplo de uso correto:</h3>
+                <pre>
+<code>
+#include &lt;stdio.h&gt;
+                    
+int main() {
+                    
+    char letra1, letra2;
+    printf("Digite uma letra: ");
+    scanf("%c", &letra1);
+    fflush(stdin);
+
+    printf("Digite outra letra: ");
+    scanf("%c", &letra2);
+
+    printf("Voce digitou: '%c' e '%c'", letra1, letra2);
+                    
+     return 0;
+}
+</code>
+                </pre>
+            </section>
+
+            <section class="border-box" id="getchar">
+                <h2>Uso do getchar</h2>
+                <p>Quando a função <strong>main</strong> finaliza a sua execução o programa fecha. Códigos precisam de
+                    uma forma de dizer ao sistema para esperar antes de fechá-los, assim dando tempo para ver o valor de
+                    saída final do programa. Uma forma de fazer isso é utilizar o <strong>getchar()</strong>, esse
+                    comando faz com que fique esperando a entrada de algum valor, ou seja, espera o usuário pressionar
+                    alguma tecla antes de finalizar.<br>Importante lembrar de utilizar o <strong>fflush(stdin)</strong>
+                    antes do <strong>getchar()</strong> para que ele não leia o enter como a entrada, assim fechando o
+                    programa.</p>
+                <h3>Exemplo:</h3>
+                <pre>
+<code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    
+    char letra1, letra2;
+    printf("Digite uma letra: ");
+    scanf("%c", &letra1);
+    fflush(stdin);
+
+    printf("Digite outra letra: ");
+    scanf("%c", &letra2);
+    fflush(stdin);
+
+    printf("Voce digitou: '%c' e '%c'", letra1, letra2);
+
+    getchar();
+    return 0;
+
+}
+</code>
+                </pre>
+            </section>
+
+            <section class="border-box" id="strings">
+                <h2>Entrada e saída de Dados para strings</h2>
+                <p><strong>Strings</strong> são uma sequência de caracteres em ordem. Para conseguir alocar todos os
+                    caracteres do valor de entrada deve ser utilizado o comando <strong>gets()</strong> no lugar de
+                    <strong>scanf</strong>, pois ele consegue armazenar caracteres após um espaço, ou seja, consegue
+                    guardar várias palavras na mesma <strong>variável:</strong>
+                </p>
+
+                <pre>
+<code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    
+    char nome[30];
+    printf("Digite nome: ");
+    gets(nome);
+    printf("Nome: ");
+    puts(nome);
+
+    getchar();
+    return 0;
+
+}
+</code>
+                </pre>
+                <p>Foi utilizado o <strong>gets()</strong> para receber o valor, e <strong>printf</strong> e
+                    <strong>puts()</strong> como comandos de saída. A variável da string também poderia ser convocada no
+                    meio do <strong>printf</strong>, sem haver a necessidade de utilizar o <strong>puts()</strong> da
+                    seguinte maneira:
+                </p>
+                <h3>printf("Nome: %s", nome);</h3>
+            </section>
+
+            <section class="border-box" id="extras">
+                <h2>Infográfico</h2>
+                <p>Uma representação visual da sintaxe do <strong>printf()</strong> e <strong>scanf()</strong>,
+                    mostrando os parâmetros e os tipos de dados.</p>
+                <pre>
+<code>
+<img src="../img/infografico.png" alt="infografico em C">
+</code>
+                </pre>
+
+                <h3>Um vídeo explicativo fazendo a demonstração dos comandos básicos.</h3>
+                <pre>
+<code>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/YLSP0ALS0jo?si=UtE8tvfgZkDCTIwt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</code>
+                </pre>
+            </section>
+
+            <section class="border-box" id="exercicios">
+                <h2>Exercício Resolvidos (com passo a passo):</h2>
+
+                <h3>1. Some dois numeros inteiros e mostre o resultado:</h3>
+                
+                <pre>
+                    <div>              
+<code >
+#include &lt;stdio.h&gt;
+
+int main() {
+
+    // Declaração de variáveis do tipo inteiro
+    int a, b, soma;
+
+    printf("Digite um número inteiro:\n");
+    scanf("%d", &a); // Recebe um inteiro e armazena na variável a
+    fflush(stdin);
+
+    printf("Digite outro número inteiro:\n");
+    scanf("%d", &b); // Recebe um inteiro e armazena na variável b
+    fflush(stdin);
+
+    soma = a + b;
+    // Efetua adição de a com b e armazena na variável soma
+
+    printf("O valor da soma = %d\n", soma); // Mostra mensagem com o resultado
+
+    return 0;
+}
+</code>
+</div>
+                </pre>
+
+                <h3>2. Leitura e Exibição de Nome e Idade:</h3>
+                
+                <pre>
+                    <div>
+<code >
+#include &lt;stdio.h&gt;
+
+int main() {
+        
+    // Declaração de variáveis do tipo inteiro e uma string de até 49 caracteres
+    int idade;
+    char nome[50]; // 50 define o tamanho máximo da string (incluindo o caractere nulo)
+    
+    printf("Digite sua idade: ");
+    scanf("%d", &idade); // Lê um valor inteiro e armazena na variável idade
+    fflush(stdin); // Limpa o buffer do teclado para evitar problemas ao ler a string
+    
+    printf("Digite seu nome: ");
+    scanf("%s", nome); // Lê uma string (sem espaços) e armazena na variável nome
+    
+    printf("Nome: %s, Idade: %d\n", nome, idade); // Exibe o nome e a idade
+    
+    return 0;
+}
+</code>
+</div>
+                </pre>
+            
+
+            <h2>Exercícios</h2>
+            <p>A lista de exercícios a seguir possui desafios que envolvem o uso de variáveis, caso sinta dificuldade,
+                passe para o próximo assunto do curso (Variáveis) e depois volte.<br>
+                Nas respostas dos exercícios pode haver comentários dentro do código para explicar algo em específico.
+                As partes de comentários não são exibidas para o usuário do programa, ficam apenas no código-fonte e
+                iniciam com duas barras seguidas: <strong>>//comentario…</strong> </p>
+
+            <h3>1. Escrever um programa que exiba: Ola, mundo!".</h3>
+            <button class="show-code-button" onclick="toggleCodeC3()">Mostrar Resposta</button>
+            <pre>
+                <div class="code-container" id="codec3">
+<code>
+#include &lt;stdio.h&gt;
+
+int main() {
+
+    printf("Ola, mundo!");
+
+    getchar();
+    return 0;
+}
+</code>
+</div>
+                </pre>
+
+            <h3>2. Escrever um programa que exiba “Ola, mundo!” pule uma linha e exiba “Tudo bem?”. Comando para pular
+                linha: \n.</h3>
+                <button class="show-code-button" onclick="toggleCodeC4()">Mostrar Resposta</button>
+            <pre>
+                <div class="code-container" id="codec4">
+<code>
+#include &lt;stdio.h&gt;
+
+int main() {
+
+    printf("Ola, mundo!");
+    printf("\nTudo bem?"); //”contra-barra (alt+92) + n” para pular linha
+
+    getchar();
+    return 0;
+}
+</code>
+</div>
+                </pre>
+
+            <h3>3. Escrever um programa que peça o nome e exiba: Ola, [variável nome informado]!</h3>
+            <button class="show-code-button" onclick="toggleCodeC5()">Mostrar Resposta</button>
+            <pre>
+                <div class="code-container" id="codec5">
+<code >
+#include &lt;stdio.h&gt;
+
+int main() {
+
+    char nome[30];
+    printf("Digite seu primeiro nome: ");
+    scanf("%s",&nome);
+    fflush(stdin);
+    printf("\nOla, %s!",nome);
+
+    getchar();
+    return 0;
+}
+</code>
+</div>
+                </pre>
+
+            <h3>4. Escreva um programa que peça dois números diferentes e guarde a soma dos dois em uma variável e
+                exiba-a.</h3>
+                <button class="show-code-button" onclick="toggleCodeC6()">Mostrar Resposta</button>
+            <pre>
+                <div class="code-container" id="codec6">
+<code>
+#include &lt;stdio.h&gt;
+
+int main() {
+
+    float numero1,numero2,soma;
+    printf("Digite o primeiro numero: ");
+    scanf("%f",&numero1);
+    fflush(stdin);
+
+    printf("Digite o segundo numero: ");
+    scanf("%f",&numero2);
+    fflush(stdin);
+
+    soma= numero1+numero2;
+
+    printf("\nA soma dos numeros %.2f e %.2f e igual a: %.2f",n1,n2,soma); //exibicao dos valores limitaos a duas casas decimais
+
+    getchar();
+    return 0;
+}
+</code>
+</div>
+                </pre>
+
+            <h3>5. Faça um programa que peça dois números e exiba a divisão deles</h3>
+            <button class="show-code-button" onclick="toggleCodeC7()">Mostrar Resposta</button>
+            <pre>
+                <div class="code-container" id="codec7">
+<code>
+#include &lt;stdio.h&gt;
+
+int main() {
+
+    float numero1,numero2,divisao;
+    printf("Digite o primeiro numero: ");
+    scanf("%f",&numero1);
+    fflush(stdin);
+
+    printf("Digite o segundo numero: ");
+    scanf("%f",&numero2);
+    fflush(stdin);
+
+    divisao = numero1/numero2;
+
+    printf("\nA divisao dos numeros %.2f e %.2f e igual a: %.2f",n1,n2,divisao); //exibicao dos valores limitaos a duas casas decimais
+
+
+    getchar();
+    return 0;
+}
+</code>
+</div>
+                </pre>
+
+            </section>
+        </div>
+    </div>
+    <script src="../scripts/script.js"></script>
+    <a href="Var.html" class="floating-button">Avançar</a>
+    <a href="Linguagem C.html" class="floating-button-prev">Voltar</a>
+    
+
+    
+</body>
+
+</html>
