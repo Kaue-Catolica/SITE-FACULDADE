@@ -100,6 +100,38 @@ int main() {
                         
                     </code>
                                     </pre>
+                                
+                                    <p>Exemplo utilizando operador booleano &&:<br>
+                                        Escreva um programa que peça ao usuário para inserir três números inteiros. O programa deve verificar se todos os três números são positivos. Se forem, o programa deve imprimir "Todos os numeros sao positivos". Caso contrário, deve imprimir "Pelo menos um numero e negativo ou zero".
+                                        
+                                    </p>
+                                    <pre>
+                                        <code>
+                                        #include &lt;stdio.h&gt;
+                                        
+                                        int main(void) {
+                                            int num1, num2, num3;
+                                        
+                                            printf("Digite o primeiro numero: ");
+                                            scanf("%i", &num1);
+                                            printf("Digite o segundo numero: ");
+                                            scanf("%i", &num2);
+                                            printf("Digite o terceiro numero: ");
+                                            scanf("%i", &num3);
+                                            fflush(stdin);
+                                        
+                                            // Condicional utilizando o operador &&
+                                            if (num1 > 0 && num2 > 0 && num3 > 0) {
+                                                printf("\nTodos os numeros sao positivos.");
+                                            } else {
+                                                printf("\nPelo menos um numero e negativo ou zero.");
+                                            }
+                                        
+                                            getchar();
+                                            return 0;
+                                        }
+                                        </code>
+                                                        </pre>
                                     <p>
                                         Vídeo sobre o comando if
                                         </p>
@@ -178,7 +210,8 @@ int main() {
 
             <section  class="border-box" id="exercicios">
                 <h2>Exercícios</h2>
-                <p>Pratique o uso de estruturas condicionais com os exemplos a seguir:</p>
+                <p>Na página inicial há a aba de atividades que também pode ser acessada.<br>
+                    Pratique o uso de estruturas condicionais if if-else e switch com os exercícios a seguir:</p>
 
                 <h3>1. Verifique se um número é par ou ímpar:</h3>
                 <button class="show-code-button" onclick="toggleCode1()">Mostrar Resposta</button>
@@ -189,15 +222,16 @@ int main() {
 
 int main() {
     int numero;
-    printf("Digite um número: ");
+    printf("Digite um numero: ");
     scanf("%d", &numero);
-
+    fflush(stdin);
 
     if (numero % 2 == 0) {
-        printf("O número é par.");
+        printf("O numero e par.");
     } else {
-        printf("O número é ímpar.");
+        printf("O numero e impar.");
     }
+    getchar();
     return 0;
 }
 
@@ -215,9 +249,9 @@ int main() {
                 
                             int main() {
                                 int dia;
-                                printf("Digite um número (1-7) para o dia da semana: ");
+                                printf("Digite um numero (1-7) para o dia da semana: ");
                                 scanf("%d", &dia);
-                            
+                                fflsuh(stdin);
                             
                                 switch(dia) {
                                     case 1:
@@ -227,7 +261,7 @@ int main() {
                                         printf("Segunda-feira");
                                         break;
                                     case 3:
-                                        printf("Terça-feira");
+                                        printf("Terca-feira");
                                         break;
                                     case 4:
                                         printf("Quarta-feira");
@@ -239,11 +273,12 @@ int main() {
                                         printf("Sexta-feira");
                                         break;
                                     case 7:
-                                        printf("Sábado");
+                                        printf("Sabado");
                                         break;
                                     default:
-                                        printf("Dia inválido");
+                                        printf("Dia invalido");
                                 }
+                                getchar();
                                 return 0;
                             }
                             
@@ -283,11 +318,11 @@ int main (void){
 </div>
                 </pre>
 
-                <h3>4. Faça um programa que peça três notas de um aluno e calcule a média. Analisar a média e imprimir uma das mensagens a seguir:</h3>
+                <h3>4. Faça um programa que peça quatro notas de um aluno e calcule a média. Analisar a média e imprimir uma das mensagens a seguir:</h3>
                 <p>
                     <br> a) A mensagem "Aprovado", se a média for maior ou igual a 7, com a respectiva média alcançada; 
                     <br> b) A mensagem "Reprovado", se a média for menor do que 7, com a respectiva média alcançada; 
-                    <br> c) A mensagem "Aprovado com Distinção", se a média for igual a 10.
+                    <br> c) A mensagem "Nota 10, continue assim!", se a média for igual a 10.
 
                 </p>
 
@@ -296,27 +331,52 @@ int main (void){
                     <div class="code-container" id="code4">
 <code>
 #include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;time.h&gt;
 
-int main() {
-    int numero, tentativa;
-    srand(time(NULL));
-    numero = rand() % 10 + 1;
+int main(void) { 
 
-    printf("Adivinhe o número (entre 1 e 10): ");
-    do {
-        scanf("%d", &tentativa);
-        if (tentativa > numero) {
-            printf("Muito alto! Tente novamente: ");
-        } else if (tentativa < numero) {
-            printf("Muito baixo! Tente novamente: ");
-        }
-    } while (tentativa != numero);
+    float n1, n2, n3, n4, media; 
 
-    printf("Parabéns! Você adivinhou o número!");
-    return 0;
-}
+ 
+
+    printf("Digite a primeira nota: "); 
+
+    scanf("%f", &n1); 
+
+    printf("Digite a segunda nota: "); 
+
+    scanf("%f", &n2); 
+
+    printf("Digite a terceira nota: "); 
+
+    scanf("%f", &n3); 
+
+   printf("Digite a quarta nota: "); 
+
+   scanf("%f", &n4); 
+
+    fflush(stdin); 
+
+    media=(n1+n2+n3+n4)/4; 
+
+    if (media>=9.5) { //>=9.5 arredonda para 10 
+
+        printf("Nota 10, continue assim!"); 
+
+    } else if (media>=6.5) { //>=6.5 arredonda para 7 
+
+        printf("Aprovado! Media: %.f", media); 
+
+    } else { 
+
+        printf("Reprovado! Media: %.f", media); 
+
+    } 
+
+    getchar(); 
+
+    return 0; 
+
+} 
 </code>
 </div>
                 </pre>

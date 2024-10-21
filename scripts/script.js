@@ -107,6 +107,10 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('All event listeners set up');
 });
 
+
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Seleciona todos os elementos que queremos animar
     const animatedElements = document.querySelectorAll('.assuntos, .seguir');

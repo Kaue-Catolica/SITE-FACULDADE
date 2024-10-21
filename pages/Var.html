@@ -17,8 +17,8 @@
                 <li><a href="../index.html">Pagina Inicial</a></li>
                 <li><a href="#Introdução" class="menu-item">Introdução</a></li>
                 <li><a href="#Quais" class="menu-item"> Quais são os tipos de variáveis nas usados?</a></li>
-                <li><a href="#como" class="menu-item">Como decrarar uma variável?</a></li>
-                <li><a href="#conclusao" class="menu-item">Conclusão</a></li>
+                <li><a href="#Como" class="menu-item">Como declarar uma variável?</a></li>
+                <li><a href="#exercvar" class="menu-item">Exercícios</a></li>
             </ul>
         </nav>
 
@@ -39,7 +39,7 @@
                 <p><strong>string:  </strong>   São utilizadas para o armazenamento de faixas de texto, palavras ou frase completas;</p>  
                 <img src="../img/var.png" alt="">  
                  </section>
-                <section class="border-box" in="Como">
+                <section class="border-box" id="Como">
                 <h3>COMO DECLARAR UMA VARIÁVEL?</h3>
                 <p> Todo valor de entrada que o seu programa possuir pode ser uma variável, e se você quiser utilizar essa variável em algum momento, é necessário reservar um espaço na memória do seu computador para declará-la, espaço esse necessário para armazenar o seu valor. Portanto, antes do programa puder receber uma variável, você precisa informar o computador que isso será feito para ele estar preparado para recebê-la.</p>
 
@@ -126,9 +126,13 @@
            <iframe width="560" height="315" src="https://www.youtube.com/embed/tfLC_huv-Ko?si=kdTMv-BlGZFwsxo2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </section>
             <section class="border-box" id="exercvar">
-                <h3>Exercícios</h3>
-                <p>Faça um programa que peça um valor em metros e exiba o valor transformado em centímetros.</p>
-
+                <h2>Exercícios</h2>
+                <p>Na página inicial há a aba de atividades que também pode ser acessada.<br>
+                    Pratique o uso de laços condicionais com os exercícios a seguir:</p>
+                <h3>Faça um programa que peça um valor em metros e exiba o valor transformado em centímetros.</h3>
+                <button class="show-code-button" onclick="toggleCode1()">Mostrar Resposta</button>
+                <pre>
+                    <div class="code-container" id="code1">
                 <pre>
                     <code>
                         #include &lt;stdio.h&gt;
@@ -145,12 +149,13 @@
                         }
                         
                     </code>
+                </div>
                 </pre>
 
-                <p>
-                    Crie um programa que leia três números inteiros e calcule a média entre eles e exiba-a.
-                    </p>
-
+                    <h3> Faça um programa que leia três números inteiros e calcule a média entre eles e exiba-a.</h3>
+                    <button class="show-code-button" onclick="toggleCode2()">Mostrar Resposta</button>
+                <pre>
+                    <div class="code-container" id="code2">
                     <pre>
                         <code>
                             #include &lt;stdio.h&gt;
@@ -171,12 +176,15 @@
                             }
                             
                         </code>
+                    </div>
                     </pre>
 
-                    <p>
-                        Faça um programa que peça o nome completo e a idade e então exiba-os
-                    </p>
+                    <h3>Faça um programa que peça o nome completo e a idade e então exiba-os</h3>
+                    <button class="show-code-button" onclick="toggleCode3()">Mostrar Resposta</button>
+                <pre>
+                    <div class="code-container" id="code3">
                     <pre>
+                        <code>
                         #include &lt;stdio.h&gt;
                         int main (void){
                             int idade;
@@ -191,7 +199,8 @@
                             getchar();
                             return 0;
                         }
-                        
+                        </code>
+                    </div>
                     </pre>
                     
             </section>

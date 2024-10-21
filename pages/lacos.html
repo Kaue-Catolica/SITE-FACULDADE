@@ -104,88 +104,82 @@ int main() {
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/GGHR93PKsXc?si=qROUCVZ0IorP_ffr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>                
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/F3Kn4iyrrEA?si=kBYXKqS6DQ6J-lEI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </section>
-
             <section class="border-box" id="conclusao">
                 <h2>Exercícios</h2>
-
-                <p>Pratique o uso de laços condicionais com os exemplos a seguir:</p>
-
-                <div>
-                    <h1>1. Escreva um programa que exiba os números de 1 a 10. Use o comando while.</h1>
-                    <button class="show-code-button" onclick="toggleCodeld1()">Mostrar Resposta</button>
-                        <pre>
-                            <div class="code-container" id="codeld1">
-                            <code>
-                                #include &lt;stdio.h&gt;
-                                int main() {
-                                    int i = 1;
-                                    
-                                    while (i <= 10) {
-                                        printf("%d\n", i);  
-                                        i++; 
-                                    }
-                                    getchar();
-                                    return 0;
-                                }
-                            </code>
-                            </div>
-                        </pre>
+                <h3>1. Escreva um programa que exiba os números de 1 a 10. Use o comando while.</h3>
+                <button class="show-code-button" onclick="toggleCodeld1()">Mostrar Resposta</button>
+                <pre>
+                    <div class="code-container" id="codeld1">
+                <pre>
+                    <code>
+                        #include &lt;stdio.h&gt;
+                        int main() {
+                            int i = 1;
+                            
+                            while (i <= 10) {
+                                printf("%d\n", i);  
+                                i++; 
+                            }
+                            getchar();
+                            return 0;
+                        }
+                    </code>
                 </div>
-                <div>
-                    <h1>2. Escreva um programa que peça ao usuário para adivinhar um número entre 1 e 10. O programa deve continuar pedindo até que o usuário acerte. Use o comando do-while.</h1>
+                </pre>
+
+                    <h3>2. Escreva um programa que peça ao usuário para adivinhar um número entre 1 e 10. O programa deve continuar pedindo até que o usuário acerte. Use o comando do-while.</h3>
                     <button class="show-code-button" onclick="toggleCodeld2()">Mostrar Resposta</button>
-                        <pre>
-                            <div class="code-container" id="codeld2">
-                            <code>
-                                #include &lt;stdio.h&gt;
-                                int main() {
-                                    int numeroSecreto = 6;  //Numero que o usuário deve adivinhar
-                                    int palpite;
-                                    
-                                    do {
-                                        printf("Adivinhe o numero entre 1 e 10: ");
-                                        scanf("%i", &palpite);
-                                       fflush(stdin);
-                                        if (palpite != numeroSecreto) {
-                                            printf("Errado, tente novamente!\n");
-                                        }
-                                    } while (palpite != numeroSecreto);
-                                    printf("Parabens, voce adivinhou o numero!\n");
+                <pre>
+                    <div class="code-container" id="codeld2">
+                    <pre>
+                        <code>
+                            #include &lt;stdio.h&gt;
+                            int main() {
+                                int numeroSecreto = 6;  //Numero que o usuário deve adivinhar
+                                int palpite;
                                 
-                                getchar();
-                                    return 0;
-                                }
-                                
-                            </code>
-                            </div>
-                        </pre>
-                </div>
-                <div>
-                    <h1>3. Escreva um programa que imprima a tabuada de um número informado pelo usuário, de 1 a 10. Use o comando for.</h1>
-                    <button class="show-code-button" onclick="toggleCodeld3()">Mostrar Resposta</button>
-                        <pre>
-                            <div class="code-container" id="codeld3">
-                            <code>
-                                #include &lt;stdio.h&gt;
-                                int main() {
-                                    int num, i;
-                                    
-                                    printf("Digite um numero para ver sua tabuada: ");
-                                    scanf("%i", &num);
-                                    fflush(stdin);
-                                    
-                                    for (i = 1; i <= 10; i++) {
-                                        printf("%d x %d = %d\n", num, i, num * i);
+                                do {
+                                    printf("Adivinhe o numero entre 1 e 10: ");
+                                    scanf("%i", &palpite);
+                                   fflush(stdin);
+                                    if (palpite != numeroSecreto) {
+                                        printf("Errado, tente novamente!\n");
                                     }
-                                    getchar();
-                                    return 0;
-                                }                                
-                            </code>
-                            </div>
-                        </pre>
-                </div>
+                                } while (palpite != numeroSecreto);
+                                printf("Parabens, voce adivinhou o numero!\n");
+                            
+                            getchar();
+                                return 0;
+                            }
+                            
+                        </code>
+                    </div>
+                    </pre>
 
-
+                    <h3>3. Escreva um programa que imprima a tabuada de um número informado pelo usuário, de 1 a 10. Use o comando for.</h3>
+                    <button class="show-code-button" onclick="toggleCodeld3()">Mostrar Resposta</button>
+                <pre>
+                    <div class="code-container" id="codeld3">
+                    <pre>
+                        <code>
+                            #include &lt;stdio.h&gt;
+                            int main() {
+                                int num, i;
+                                
+                                printf("Digite um numero para ver sua tabuada: ");
+                                scanf("%i", &num);
+                                fflush(stdin);
+                                
+                                for (i = 1; i <= 10; i++) {
+                                    printf("\n%i x %i = %i", num, i, num * i);
+                                }
+                                getchar();
+                                return 0;
+                            }                                
+                        </code>
+                    </div>
+                    </pre>
+                    
             </section>
 
             <a href="../index.html" class="floating-button">Finalizar</a>
