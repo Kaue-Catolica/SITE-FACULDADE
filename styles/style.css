@@ -50,7 +50,7 @@ body {
     justify-content: space-between;
 
     & a{
-        color: #f1683a;
+        color: #fff;
         margin-left: 10px;
         margin-right: 10px;
     }
@@ -525,7 +525,7 @@ body {
     padding: 1rem; 
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-
+    cursor: pointer;
     & button {
         background-color: #f1683a;
         color: #fff;
@@ -784,7 +784,6 @@ body {
 
 /* Estilo do código */
 .code-container {
-    width: 50vw;
     display: none; 
     background-color: #f0f0f0; 
     border: 1px solid #ccc;
@@ -792,6 +791,15 @@ body {
     padding: 10px; 
     white-space: pre; 
     overflow: auto;
+}
+
+pre {
+    width: 85vw;
+    border-radius: 5px;
+    padding: 10px; 
+    white-space: pre; 
+    overflow: auto;
+
 }
 
 
