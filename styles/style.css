@@ -50,7 +50,7 @@ body {
     justify-content: space-between;
 
     & a{
-        color: #f1683a;
+        color: #fff;
         margin-left: 10px;
         margin-right: 10px;
     }
